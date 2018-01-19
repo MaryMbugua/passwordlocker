@@ -1,5 +1,5 @@
 import unittest ##import unittest module
-from credentials import Credentials ##import user class from credentials.py file
+from credentials import Credentials ##import credential class from credentials.py file
 import pyperclip
 
 class TestUser(unittest.TestCase):
@@ -83,20 +83,7 @@ class TestUser(unittest.TestCase):
         Credentials.copy_account_password("facebook")
         self.assertEqual(self.new_credential.account_password,pyperclip.paste())
 
-    
-    # def test_generate_randompass(self):
-    #     '''
-    #     test for method that generates a random password
-    #     and returns a string
-    #     '''
-
-    #     self.new_credential.save_newcredential()
-    #     test_credential = Credentials("newapp","testuser","testpass")
-    #     test_credential.save_newcredential()
-    #     randompass_generated = Credentials.generate_randompass()
-    #     self.assertEqual(str(randompass_generated),str(randompass_generated))
-
-
+   
 
 if __name__ == '__main__':
     unittest.main()

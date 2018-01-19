@@ -56,18 +56,3 @@ class Credentials:
     def copy_account_password(cls,appname):
         credential_found = Credentials.find_credentialbyappname(appname)
         pyperclip.copy(credential_found.account_password)
-
-    # def generate_randompass():
-    #     '''method to generate a random password
-    #     which should have an uppercase letter,lowercase,digit 
-    #     and punctuation mark
-    #     password length=8 letters
-    #     '''
-    #     #password should contain a capital letter,small letter,digit and a punctuation
-    #     characters = string.ascii_uppercase + string.ascii_lowercase + string.digits + string.punctuation
-    #     #length of the password
-    #     passlength = random.randint(8,16)
-    #     #randomly joins the characters
-    #     pass_word = ''.join(secrets.choice(characters) for x in range(passlength))
-    #     ##return or print the generated password
-    #     return pass_word
