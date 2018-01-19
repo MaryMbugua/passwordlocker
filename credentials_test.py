@@ -1,5 +1,6 @@
 import unittest ##import unittest module
 from credentials import Credentials ##import user class from credentials.py file
+import pyperclip
 
 class TestUser(unittest.TestCase):
     def setUp(self):
@@ -73,6 +74,30 @@ class TestUser(unittest.TestCase):
         all credentials saved
         '''
         self.assertEqual(Credentials.display_allcredentials(),Credentials.credential_list)
+    def test_copy_credential(self):
+        '''test to confirm
+        we are copying the password
+         from a found credential
+        '''
+        self.new_credential.save_newcredential()
+        Credentials.copy_credential("newapp")
+        self.assertEqual(self.new_credential.account_password,pyperclip.paste())
+
+    
+    # def test_generate_randompass(self):
+    #     '''
+    #     test for method that generates a random password
+    #     and returns a string
+    #     '''
+
+    #     self.new_credential.save_newcredential()
+    #     test_credential = Credentials("newapp","testuser","testpass")
+    #     test_credential.save_newcredential()
+    #     randompass_generated = Credentials.generate_randompass()
+    #     self.assertEqual(str(randompass_generated),str(randompass_generated))
+
+
+
 if __name__ == '__main__':
     unittest.main()
 
