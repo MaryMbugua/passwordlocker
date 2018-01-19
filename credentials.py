@@ -41,3 +41,9 @@ class Credentials:
             if Credentials.app_name == appname:
                 return True
         return False
+    @classmethod
+    def display_allcredentials(cls):
+        '''
+        method that returns the credentials list
+        '''
+        return cls.credential_list
