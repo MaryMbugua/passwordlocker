@@ -1,1 +1,0 @@
-import User from Usercred ##import user class from usercred.py file
