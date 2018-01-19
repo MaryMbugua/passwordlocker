@@ -18,7 +18,7 @@ def generate_randompass():
 
 ##Calling the Functions!!
 def main():
-    print("Hello!Welcome to the PasswordLocker application.To proceed,Use these short codes :ca - create an account using your own password,create an account using a randomly generated  password.")
+    print("Hello!Welcome to the PasswordLocker application.To proceed,Use these short codes :ca - create an account using your own password,ra - create an account using a randomly generated  password,ex - exit the application")
     short_code = input().lower()
     if short_code == 'ca':
         print("Create an account using your own password")
@@ -34,13 +34,55 @@ def main():
         u_name = input()
 
         print("Phone Number ")
-        p_name = input()
+        p_number = input()
         
         print("Email ")
         e_address = input()
         
         print("Password ")
         p_word = input()
+
+        ###create and save a new account
+        save_user(create_user(f_name,l_name,u_name,p_number,e_address,p_word))
+        print('\n')
+        print(f"New Account {u_name} created")
+        print('\n')
+        print("To login use the short code :lg - login into account ,ex - to exit the application")
+            short_codetwo = input().lower()
+            if short_codetwo == 'lg':
+            
+            elif short_codetwo == 'ex':
+                print("Bye Bye!")
+                break
+            else:
+                print("I really didn't get that.Please use the short codes")
+
+
+    elif short_code == 'ra':
+        print("Create an account using a randomly generated password")
+        print("-"*10)
+
+        print("First Name ")
+        f_name = input()
+
+        print("Last Name ")
+        l_name = input()
+
+        print("User Name ")
+        u_name = input()
+
+        print("Phone Number ")
+        p_number = input()
+        
+        print("Email ")
+        e_address = input()
+    elif short_code == "ex":
+        print("Bye Bye!")
+        break
+    else:
+        print("I really didn't get that.Please use the short codes")
+       
+        
 
 if __name__ == '__main__':
 
