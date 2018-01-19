@@ -67,6 +67,12 @@ class TestUser(unittest.TestCase):
         test_credential.save_newcredential()
         credential_exists = Credentials.credential_exist("newapp")
         self.assertTrue(credential_exists)
+    def test_display_allcredentials(self):
+        '''
+        test for method that returns 
+        all credentials saved
+        '''
+        self.assertEqual(Credentials.display_allcredentials(),Credentials.credential_list)
 if __name__ == '__main__':
     unittest.main()
 
