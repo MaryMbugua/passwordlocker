@@ -74,13 +74,13 @@ class TestUser(unittest.TestCase):
         all credentials saved
         '''
         self.assertEqual(Credentials.display_allcredentials(),Credentials.credential_list)
-    def test_copy_credential(self):
+    def test_copy_account_password(self):
         '''test to confirm
-        we are copying the password
+        we are copying the account_password
          from a found credential
         '''
         self.new_credential.save_newcredential()
-        Credentials.copy_credential("newapp")
+        Credentials.copy_account_password("facebook")
         self.assertEqual(self.new_credential.account_password,pyperclip.paste())
 
     

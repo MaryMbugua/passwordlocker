@@ -2,6 +2,7 @@ import string
 import secrets
 import random
 import pyperclip
+
 class Credentials:
     '''
     CLASS THAT GENERATES A NEW INSTANCE OF A USER/
@@ -52,6 +53,9 @@ class Credentials:
         '''
         return cls.credential_list
     @classmethod
+    def copy_account_password(cls,appname):
+        credential_found = Credentials.find_credentialbyappname(appname)
+        pyperclip.copy(credential_found.account_password)
 
     # def generate_randompass():
     #     '''method to generate a random password
