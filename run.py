@@ -123,15 +123,21 @@ def main():
                             print('\n')
                             print("You do not seem to have any credentials saved yet.")
                             print('\n')
-                    elif expression:
-                        pass                                                 
-                    
-                    else:
-                        print("Wrong username or password.Please try again.")
+                    elif short_codethree == 'fc':
+                        print("Enter the application name for the credential you want to search for.")
+
+                        search_applicationname =input()
+                        if credential_exist(search_applicationname):
+                            search_credential = find_credentialbyappname(search_applicationname)
+                            print(f"{search_applicationname.appli_name} {search_applicationname.acc_name} {search_applicationname.pass_name}")                                             
+                        else:
+                            print("That credential doesnot exist.")
+                else:
+                    print("Wrong username or password.Please try again.")
                 
-                                    # elif short_codetwo == 'ex':
-                                    #     print("Bye Bye!")
-                                    # break
+            elif short_codetwo == 'ex':
+                print("Bye Bye!")
+                break
             else:
                 print("I really didn't get that.Please use the short codes")
 
@@ -154,6 +160,7 @@ def main():
             
             print("Email ")
             e_address = input()
+            
         elif short_code == "ex":
             print("Bye Bye!")
             break
